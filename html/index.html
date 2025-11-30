@@ -4,67 +4,41 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Helatto</title>
-    <style>
-        
-        nav ul {
-            display: flex;
-            justify-content: flex-end;
-            padding: 0;
-            margin: 0 20px;
-            gap: 30px;
-        }
 
-        nav ul li{
-            list-style: none;
-        }
-
-        nav a{
-            text-decoration: none;
-        }
-
-        header a{
-            display: flex;
-                justify-content: end;
-        }
-
-        .contenedorFooter{
-            display: flex;
-                justify-content: space-evenly;
-        }
-        
-        
-
-        footer p{
-            text-align: center;
-        }
-    </style>
-
+    <!--Google Fonts-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Italianno&family=Lexend+Mega:wght@100..900&family=Lobster&family=Pacifico&display=swap" rel="stylesheet">    <!-- -->
+    
 </head>
-<body>
-    <header>
-        <nav>
-            <ul>
-                <li><a href="#">Todos nuestros sabores</a></li>
-                <li><a href="#">Nuestras Sucursales</a></li>
-                <li><a href="#">Preguntas</a></li>
-                <li><a href="#">Nosotros</a></li>
-                <li><a href="#">Contactenos</a></li>
-            </ul>
-        </nav>
-
-        <div>
-            <h1>Los Mejores Helados</h1>
-            
-            <p>"Gelato hecho a mano"</p>
+<body class="font-sans">
+    <header class="bg-[url(/static/img/portadaHero.jpg)] w-full h-screen bg-center bg-no-repeat bg-cover flex flex-col justify-between">
+        <div class="flex justify-between bg-linear-to-l from-pink-200 to-pink-100 items-center p-[0_30px]" >  
+            <img src="/static/img/hellatoLogo.png" alt="HelattoLogo" width="60px">
+            <nav class="font-[Lexend_Mega] text-[11px] text-white">
+                <ul class="flex justify-around m-[0_10px] gap-[15px] flex-wrap ">
+                    <li><a href="#">SABORES</a></li>
+                    <li><a href="#">SUCURSALES</a></li>
+                    <li><a href="#">PREGUNTAS</a></li>
+                    <li><a href="#">NOSOTROS</a></li>
+                    <li><a href="#">CONTACTENOS</a></li>
+                </ul>
+            </nav>
         </div>
 
-        <a href="#">Nuestros mejores sabores</a>
+        <div>
+            <h1 class="font-[Pacifico] text-8xl text-white m-[0_5%]">Los Mejores <br> Helados</h1> <br>
+            
+            <p class="font-[Italianno] text-5xl m-[0_10%]  text-pink-100">"Gelato hecho a mano"</p>
+        </div>
+
+        <a class="self-end text-center bg-pink-300 text-white font-semibold py-3 px-6 rounded-lg shadow-md hover:bg-pink-400 hover:shadow-lg transition-all duration-300 mr-10 mb-10 w-3xs" href="#">Nuestros mejores sabores</a>
     </header>
     <main>
 
     </main>
-    <footer>
-        <div class="contenedorFooter">
+    <footer class=" border-t-2 border-pink-300">
+        <div class="flex justify-evenly">
             <div>
                 <h3>Informacion</h3>
                 <ul>
@@ -83,11 +57,13 @@
             </div>
         </div>
 
-        <hr>
+        <hr class="my-4">
 
-        <p>
+        <p class=" text-center">
             &copy; Helatto. Todos los derechos reservados.
         </p>
     </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 </body>
 </html>
