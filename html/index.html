@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,134 +11,291 @@
     <!--Google Fonts-->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Italianno&family=Lexend+Mega:wght@100..900&family=Lobster&family=Pacifico&display=swap" rel="stylesheet">    
-    
+    <link
+        href="https://fonts.googleapis.com/css2?family=Italianno&family=Lexend+Mega:wght@100..900&family=Lobster&family=Pacifico&display=swap"
+        rel="stylesheet">
+
+    <style>
+        /* Se supone que oculta la barra de scroll no funciona en todos los navegadores(buscar solucion) */
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+
+        /*(solucion) */
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+
+        /* Desplazamiento suave para los anclas(no encontre el equivalente en tailwind)*/
+        html {
+            scroll-behavior: smooth;
+        }
+
+    </style>
+
     <!-- -->
-    
+
 </head>
+
 <body class="font-sans">
-    <header class="bg-[url(/static/img/portadaHero.jpg)] w-full h-screen bg-center bg-no-repeat bg-cover flex flex-col justify-between">
-        <div class="flex justify-between bg-linear-to-l from-pink-300 to-pink-200 items-center p-[0_30px] gap-10" >  
-            
+    <header
+        class="bg-[url(/static/img/portadaHero.jpg)] w-full h-screen bg-center bg-no-repeat bg-cover flex flex-col justify-between">
+        <div class="flex justify-between bg-linear-to-l from-pink-300 to-pink-200 items-center p-[0_30px] gap-10">
+
             <img src="/static/img/hellatoLogo.png" alt="HelattoLogo" width="60px">
 
-            <label for="menu-toggle" class="cursor-pointer md:hidden block text-white">
+
+            <!-- boton hamburguesa podria haber usa un a y una imagen pero queria probar la etiqueta svg nunca le di un uso real en la ingenieria en programacion3 -->
+            <label for="menuHamburguesa" class="cursor-pointer md:hidden block text-white">
                 <svg class="w-9 h-9" fill="none" stroke="currentColor" viewBox="0 0 20 27">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3"
-                        d="M4 6h16M4 12h16M4 18h16" />
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M4 6h16M4 12h16M4 18h16" />
                 </svg>
             </label>
 
-            <input type="checkbox" id="menu-toggle" class="hidden peer">
+            <input type="checkbox" id="menuHamburguesa" class="hidden peer">
             <nav class="hidden peer-checked:block md:block font-[Lexend_Mega] text-[13px] text-white absolute md:static right-0 top-[80px]          
                         bg-pink-300 md:bg-transparent p-5 md:p-0 rounded-lg md:rounded-none shadow-lg md:shadow-none">
-                        
-            <ul class="flex flex-col md:flex-row md:justify-around gap-5 md:gap-[25px]">
-                <li><a href="#">SABORES</a></li>
-                <li><a href="#">SUCURSALES</a></li>
-                <li><a href="#">NOSOTROS</a></li>
-                <li><a href="#">CONTACTENOS</a></li>
-            </ul>
-        </nav>
+
+                <ul class="flex flex-col md:flex-row md:justify-around gap-5 md:gap-[25px]">
+                    <li><a href="#">SABORES</a></li>
+                    <li><a href="#">SUCURSALES</a></li>
+                    <li><a href="#">NOSOTROS</a></li>
+                    <li><a href="#">CONTACTENOS</a></li>
+                </ul>
+            </nav>
 
         </div>
 
         <div>
             <h1 class="font-[Pacifico] text-8xl text-white m-[0_5%] drop-shadow-sm">Los Mejores <br> Helados</h1> <br>
-            
+
             <p class="font-[Italianno] text-5xl m-[0_10%]  text-pink-100 drop-shadow-sm">"Gelato hecho a mano"</p>
         </div>
 
         <a class="self-end text-center bg-pink-300 text-white font-semibold py-3 px-3 rounded-full shadow-md hover:bg-pink-400 hover:shadow-lg 
                     transition-all duration-300 mr-10 mb-10 w-2xs" href="#">NUESTROS SABORES</a>
     </header>
+    
     <main>
-        
-        <div class="flex p-11 gap-5 flex-wrap justify-evenly">
-<!-- 
-            opcion1 -->
-            <div class="flex flex-col w-[300px] border-pink-400 border-2 rounded-3xl drop-shadow-sm">
 
-                <!-- HEADER con imagen -->
-                <div class="h-[150px] bg-[url('/static/img/Sabores/arandonosChocolate.jpg')] bg-cover bg-center rounded-t-3xl flex items-end">
-                    
-                    <h3 class="bg-pink-300/80 text-white text-center w-full py-2 rounded-full m-[10px_10px]">
-                        ARÁNDANOS CON CHOCOLATE
-                    </h3>
-        
+        <h2 class="font-[Lexend_Mega] text-center md:text-left text-3xl text-pink-400 m-[5%_5%] drop-shadow-sm">LOS MEJORES SABORES DEL MES</h2>
+
+        <div class="flex p-4 gap-8 overflow-x-auto snap-x snap-mandatory w-full pb-10 scroll-smooth no-scrollbar">
+
+<!-- =======================================SABOR-1============================================ -->
+            <div id="sabor1" class="snap-center shrink-0 w-[300px] min-h-[300px] rounded-3xl overflow-hidden bg-pink-100 border-1 border-pink-300 transition-all duration-300 hover:shadow-xl hover:-translate-y-2 hover:hover:scale-105">
+
+                <div
+                    class="h-[160px] bg-[url('/static/img/Sabores/frutillaReina.jpg')] bg-cover bg-center transition-transform duration-110 hover:scale-110">
                 </div>
 
-                <p class="p-5 text-sm text-gray-800">
-                    Una combinación moderna: helado suave con arándanos ácidos y trocitos o hilos de chocolate. Un contraste delicioso y muy aromático.
-                </p>
-
-            </div>
-
-
-        <!-- opcion2 -->
-         <div class="w-[300px] rounded-3xl overflow-hidden shadow-md bg-white">
-            
-            <!-- Imagen -->
-            <div class="h-[160px] bg-[url('/static/img/Sabores/arandonosChocolate.jpg')] bg-cover bg-center"></div>
-
-            <!-- Contenido -->
-            <div class="p-5">
-                <h3 class="text-lg font-semibold text-gray-900 mb-2">
-                    ARÁNDANOS CON CHOCOLATE
-                </h3>
-                <p class="text-gray-700 text-sm">
-                    Una combinación moderna: helado suave con arándanos ácidos y trocitos o hilos de chocolate. Un contraste delicioso y muy aromático.
-                </p>
-            </div>
-
-        </div>
-
-        <!-- opcion3 -->
-        <div class="w-[300px] rounded-3xl overflow-hidden bg-pink-100 border-4 border-pink-300 shadow-[0_5px_0_0_#f472b6]">
-
-            <!-- Imagen -->
-            <div class="h-[160px] bg-[url('/static/img/Sabores/arandonosChocolate.jpg')] bg-cover bg-center relative">
-
-                <!-- Cinta pastel -->
-                <div class="absolute bottom-0 left-0 w-full bg-pink-300/80 backdrop-blur-sm py-2 text-center">
-                    <h3 class="text-white font-[Lexend_Mega] text-sm tracking-wide">
-                        ARÁNDANOS CON CHOCOLATE
+                <div class="p-5">
+                    <h3 class="text-lg font-bold text-pink-400">
+                        FRUTILLA A LA REINA
                     </h3>
+                    <p class="text-gray-700 text-sm mt-2 drop-shadow-sm">
+                        Un sabor premium que combina crema suave con frutillas enteras o trozadas. Más dulce, más intenso y con una textura espectacular.
+                    </p>
                 </div>
 
             </div>
 
-            <!-- Descripción -->
-            <p class="p-5 text-gray-700 text-sm font-light leading-relaxed">
-                Una combinación moderna: helado suave con arándanos ácidos y trocitos o hilos de chocolate. Un contraste delicioso y muy aromático.
-            </p>
 
-        </div>
+<!-- =======================================SABOR-2============================================ -->
+            <div id="sabor2" class="snap-center shrink-0 w-[300px] min-h-[300px] rounded-3xl overflow-hidden bg-pink-100 border-1 border-pink-300 transition-all duration-300 hover:shadow-xl hover:-translate-y-2 hover:hover:scale-105">
 
-        <!-- opcion4 -->
-        <div class="w-[300px] rounded-3xl overflow-hidden bg-white border border-pink-200 transition-all duration-300 hover:shadow-xl hover:-translate-y-2">
+                <div
+                    class="h-[160px] bg-[url('/static/img/Sabores/chocolateKinder.jpg')] bg-cover bg-center transition-transform duration-110 hover:scale-110">
+                </div>
 
-            <!-- Imagen con zoom en hover -->
-            <div class="h-[160px] bg-[url('/static/img/Sabores/arandonosChocolate.jpg')] bg-cover bg-center transition-transform duration-300 hover:scale-110"></div>
+                <div class="p-5">
+                    <h3 class="text-lg font-bold text-pink-400">
+                        CHOCOLATE KINDER
+                    </h3>
+                    <p class="text-gray-700 text-sm mt-2 drop-shadow-sm">
+                        Un helado ultra cremoso inspirado en el inconfundible sabor Kinder: dulce, suave y con notas de leche.
+                    </p>
+                </div>
 
-            <!-- Contenido -->
-            <div class="p-5">
-                <h3 class="text-lg font-bold text-pink-500">
-                    ARÁNDANOS CON CHOCOLATE
-                </h3>
-                <p class="text-gray-700 text-sm mt-2">
-                    Una combinación moderna: helado suave con arándanos ácidos y trocitos o hilos de chocolate. Un contraste delicioso y muy aromático.
-                </p>
+            </div>
+
+
+<!-- =======================================SABOR-3============================================ -->
+            <div id="sabor3" class="snap-center shrink-0 w-[300px] min-h-[300px] rounded-3xl overflow-hidden bg-pink-100 border-1 border-pink-300 transition-all duration-300 hover:shadow-xl hover:-translate-y-2 hover:hover:scale-105">
+
+                <div
+                    class="h-[160px] bg-[url('/static/img/Sabores/arandonosChocolate.jpg')] bg-cover bg-center transition-transform duration-110 hover:scale-110">
+                </div>
+
+                <div class="p-5">
+                    <h3 class="text-lg font-bold text-pink-400">
+                        ARÁNDANOS CON CHOCOLATE
+                    </h3>
+                    <p class="text-gray-700 text-sm mt-2 drop-shadow-sm">
+                        Una combinación moderna: helado suave con arándanos ácidos y trocitos o hilos de chocolate.
+                    </p>
+                </div>
+
+            </div>
+
+
+<!-- =======================================SABOR-4============================================ -->
+            <div id="sabor4" class="snap-center shrink-0 w-[300px] min-h-[300px] rounded-3xl overflow-hidden bg-pink-100 border-1 border-pink-300 transition-all duration-300 hover:shadow-xl hover:-translate-y-2 hover:hover:scale-105">
+
+                <div
+                    class="h-[160px] bg-[url('/static/img/Sabores/chocolateHeidi.jpg')] bg-cover bg-center transition-transform duration-110 hover:scale-110">
+                </div>
+
+                <div class="p-5">
+                    <h3 class="text-lg font-bold text-pink-400">
+                        CHOCOLATE HEIDI
+                    </h3>
+                    <p class="text-gray-700 text-sm mt-2 drop-shadow-sm">
+                        Sabor premium elaborado con chocolate Heidi, reconocido por su calidad superior. Cremoso y balanceado.
+                    </p>
+                </div>
+
+            </div>
+
+
+<!-- =======================================SABOR-5============================================ -->
+            <div id="sabor5" class="snap-center shrink-0 w-[300px] min-h-[300px] rounded-3xl overflow-hidden bg-pink-100 border-1 border-pink-300 transition-all duration-300 hover:shadow-xl hover:-translate-y-2 hover:hover:scale-105">
+
+                <div
+                    class="h-[160px] bg-[url('/static/img/Sabores/vainillaFrutosRojos.jpg')] bg-cover bg-center transition-transform duration-110 hover:scale-110">
+                </div>
+
+                <div class="p-5">
+                    <h3 class="text-lg font-bold text-pink-400">
+                        VAINILLA CON FRUTOS ROJOS
+                    </h3>
+                    <p class="text-gray-700 text-sm mt-2 drop-shadow-sm">
+                        Cremoso helado de vainilla natural acompañado de una compota artesanal de frutos rojos.
+                    </p>
+                </div>
+
+            </div>
+
+
+<!-- =======================================SABOR-6============================================ -->
+            <div id="sabor6" class="snap-center shrink-0 w-[300px] min-h-[300px] rounded-3xl overflow-hidden bg-pink-100 border-1 border-pink-300 transition-all duration-300 hover:shadow-xl hover:-translate-y-2 hover:hover:scale-105">
+
+                <div
+                    class="h-[160px] bg-[url('/static/img/Sabores/pistacho.jpg')] bg-cover bg-center transition-transform duration-110 hover:scale-110">
+                </div>
+
+                <div class="p-5">
+                    <h3 class="text-lg font-bold text-pink-400">
+                        PISTACHO
+                    </h3>
+                    <p class="text-gray-700 text-sm mt-2 drop-shadow-sm">
+                        Hecho con pistachos seleccionados para un sabor profundo, natural y muy aromático.
+                    </p>
+                </div>
+
+            </div>
+
+
+<!-- =======================================SABOR-7============================================ -->
+            <div id="sabor7" class="snap-center shrink-0 w-[300px] min-h-[300px] rounded-3xl overflow-hidden bg-pink-100 border-1 border-pink-300 transition-all duration-300 hover:shadow-xl hover:-translate-y-2 hover:hover:scale-105">
+
+                <div
+                    class="h-[160px] bg-[url('/static/img/Sabores/pomeloRosado.jpg')] bg-cover bg-center transition-transform duration-110 hover:scale-110">
+                </div>
+
+                <div class="p-5">
+                    <h3 class="text-lg font-bold text-pink-400">
+                        POMELO ROSADO
+                    </h3>
+                    <p class="text-gray-700 text-sm mt-2 drop-shadow-sm">
+                        Un sabor diferente: jugoso, fresco y con ese amargor suave y característico del pomelo rosado.
+                    </p>
+                </div>
+
+            </div>
+
+
+<!-- =======================================SABOR-8============================================ -->
+            <div id="sabor8" class="snap-center shrink-0 w-[300px] min-h-[300px] rounded-3xl overflow-hidden bg-pink-100 border-1 border-pink-300 transition-all duration-300 hover:shadow-xl hover:-translate-y-2 hover:hover:scale-105">
+
+                <div
+                    class="h-[160px] bg-[url('/static/img/Sabores/maracuyaCrema.jpg')] bg-cover bg-center transition-transform duration-110 hover:scale-110">
+                </div>
+
+                <div class="p-5">
+                    <h3 class="text-lg font-bold text-pink-400">
+                        MARACUYÁ A LA CREMA
+                    </h3>
+                    <p class="text-gray-700 text-sm mt-2 drop-shadow-sm">
+                        Nuestra crema suave se fusiona con la intensidad del maracuyá, generando un sabor tropical.
+                    </p>
+                </div>
+
+            </div>
+
+
+<!-- =======================================SABOR-9============================================ -->
+            <div id="sabor9" class="snap-center shrink-0 w-[300px] min-h-[300px] rounded-3xl overflow-hidden bg-pink-100 border-1 border-pink-300 transition-all duration-300 hover:shadow-xl hover:-translate-y-2 hover:hover:scale-105">
+
+                <div
+                    class="h-[160px] bg-[url('/static/img/Sabores/dulceLecheNuez.jpg')] bg-cover bg-center transition-transform duration-110 hover:scale-110">
+                </div>
+
+                <div class="p-5">
+                    <h3 class="text-lg font-bold text-pink-400">
+                        DULCE DE LECHE CON NUEZ
+                    </h3>
+                    <p class="text-gray-700 text-sm mt-2 drop-shadow-sm">
+                        La mezcla justa entre lo cremoso y lo crocante. Dulce de leche artesanal con nueces seleccionadas.
+                    </p>
+                </div>
+
+            </div>
+
+
+<!-- =======================================SABOR-10============================================ -->
+            <div id="sabor10" class="snap-center shrink-0 w-[300px] min-h-[300px] rounded-3xl overflow-hidden bg-pink-100 border-1 border-pink-300 transition-all duration-300 hover:shadow-xl hover:-translate-y-2 hover:hover:scale-105 mr-5">
+
+                <div
+                    class="h-[160px] bg-[url('/static/img/Sabores/tuttiFrutti.jpg')] bg-cover bg-center transition-transform duration-110 hover:scale-110">
+                </div>
+
+                <div class="p-5">
+                    <h3 class="text-lg font-bold text-pink-400">
+                        TUTTI FRUTTI
+                    </h3>
+                    <p class="text-gray-700 text-sm mt-2 drop-shadow-sm">
+                        Colorido, divertido y lleno de sabor. Mezcla de frutas dulces con un toque fresco.
+                    </p>
+                </div>
+
             </div>
 
         </div>
 
+
+        <!-- ANCLAS ES UN QUILOMBO QUE MANERA RENEGA -->
+        <div class="flex justify-center gap-4 mt-4 pb-4">
+            <a href="#sabor1" class="w-4 h-4 rounded-full bg-pink-200 hover:bg-pink-400 transition-colors shadow-sm border border-pink-300" title="Inicio">
+            </a>
+
+            <a href="#sabor2" class="w-4 h-4 rounded-full bg-pink-200 hover:bg-pink-400 transition-colors shadow-sm border border-pink-300" title="Mas sabores">
+            </a>
+
+            <a href="#sabor3" class="w-4 h-4 rounded-full bg-pink-200 hover:bg-pink-400 transition-colors shadow-sm border border-pink-300" title="Mas sabores">
+            </a>
+
+            <a href="#sabor4" class="w-4 h-4 rounded-full bg-pink-200 hover:bg-pink-400 transition-colors shadow-sm border border-pink-300" title="Mas sabores">
+            </a>
 
         </div>
 
     </main>
-    <footer class=" border-t-2 border-pink-200 bg-linear-to-r from-pink-300 to-pink-300 p-10" >
-        <div class="flex flex-wrap justify-start md:justify-evenly items-center p-[0_40px] mb-7 font-[Lexend_Mega] text-[14px] text-white gap-5">
+
+    <footer class=" border-t-2 border-pink-200 bg-linear-to-r from-pink-300 to-pink-300 p-10">
+        <div
+            class="flex flex-wrap justify-start md:justify-evenly items-center p-[0_40px] mb-7 font-[Lexend_Mega] text-[14px] text-white gap-5">
             <div class="">
                 <h3 class="text-[15px]">Informacion</h3>
                 <ul class="pl-4">
@@ -168,4 +326,5 @@
 
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 </body>
+
 </html>
