@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Helatto</title>
+
+    <link rel="icon" href="/static/img/hellatoIconRosa.png">
+
+    <!--Google Fonts-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Italianno&family=Lexend+Mega:wght@100..900&family=Lobster&family=Pacifico&display=swap"
+        rel="stylesheet">
+
+    <style>
+        /* Se supone que oculta la barra de scroll no funciona en todos los navegadores(buscar solucion) */
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+
+        /*(solucion) */
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+
+        /* Desplazamiento suave para los anclas(no encontre el equivalente en tailwind)*/
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
+
+
+</head>
+
+<body class="font-sans">
+    <header class=" bg-center bg-no-repeat bg-cover flex flex-col justify-between">
+        <div class="flex justify-between bg-linear-to-l from-pink-300 to-pink-200 items-center p-[0_30px] gap-10">
+
+            <a href="#"><img src="/static/img/hellatoLogoRosa.png" alt="HelattoLogo" width="60px"></a>
+
+
+            <!-- boton hamburguesa podria haber usa un a y una imagen pero queria probar la etiqueta svg nunca le di un uso real en la ingenieria en programacion3 -->
+            <label for="menuHamburguesa" class="cursor-pointer md:hidden block text-white">
+                <svg class="w-9 h-9" fill="none" stroke="currentColor" viewBox="0 0 20 27">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M4 6h16M4 12h16M4 18h16" />
+                </svg>
+            </label>
+
+            <input type="checkbox" id="menuHamburguesa" class="hidden peer">
+            <nav
+                class="hidden peer-checked:block md:block font-[Lexend_Mega] text-[13px] text-white absolute md:static right-2 top-[80px]          
+                        bg-pink-300 md:bg-transparent p-5 md:p-0 rounded-lg md:rounded-none shadow-lg md:shadow-none z-50">
+
+                <ul class="flex flex-col md:flex-row md:justify-around gap-5 md:gap-[25px]">
+                    <li><a href="/html/todosSabores.html">SABORES</a></li>
+                    <li><a href="/html/sucursales.html">SUCURSALES</a></li>
+                    <li><a href="/html/nosotros.html">NOSOTROS</a></li>
+                    <li><a href="/html/contactenos.html">CONTACTENOS</a></li>
+                </ul>
+            </nav>
+
+        </div>
+    </header>
+
+    <main>
+
+        <h2 class="font-[Lexend_Mega] text-center md:text-left text-5xl md:text-6xl text-pink-500 m-[5%_5%] drop-shadow-sm">TODAS
+            NUESTRAS SUCURSALES</h2>
+
+        <div class="flex flex-wrap justify-evenly p-4 gap-10  w-full pb-10 scroll-smooth ">
+<!-- DESCRIPCION BASE DE LOS SUCURSALES  -->
+            <div class="container mx-auto flex flex-col md:flex-row items-center gap-10 px-6">
+
+                <div class="md:w-1/2">
+                    <img class="rounded-3xl shadow-lg w-full object-cover"
+                        src="/static/img/localesHelatto/heladeriaHellatoModelo2.jpg" alt="Heladería Helatto">
+                </div>
+
+                <div class="md:w-1/2 flex flex-col gap-5">
+                    <h2 class="text-4xl md:text-5xl font-[Lexend_Mega] text-pink-500 drop-shadow-sm">EL LUGAR PERFECTO PARA COMPARTIR</h2>
+
+                    <p class="text-[17px] text-gray-700 leading-relaxed">
+                        En <span class="text-pink-500 font-semibold">Helatto</span> creemos que
+                        una heladería no es solo un punto de encuentro: es un espacio donde
+                        familias, amigos y parejas comparten momentos, celebran logros y
+                        disfrutan de sabores únicos preparados artesanalmente.
+                    </p>
+
+                    <p class="text-[17px] text-gray-700 leading-relaxed">
+                        Nuestras sucursales están pensadas para que puedas relajarte,
+                        concentrarte, estudiar, trabajar o simplemente pasar una tarde
+                        especial rodeado del mejor ambiente. <span class="font-semibold text-pink-400">
+                            Todos son bienvenidos</span>, siempre.
+                    </p>
+                </div>
+
+            </div>
+
+<!-- ACA EMPIEZO A LISTAR LAS SUCURSALES, SOBRA DECIR QUE SON FICTIAS -->
+            <div class="flex flex-wrap justify-evenly gap-5">
+                <div class="border border-pink-300 rounded-3xl p-5 shadow-md bg-white min-w-100 max-w-220 ">
+                    <h3 class="text-2xl font-bold text-pink-500 ">Helatto Centro</h3>
+                    <p class="text-gray-700 mt-2">
+                        Ubicada en el corazón del centro, esta sucursal combina un ambiente moderno con detalles
+                        vintage.
+                    </p>
+                    <p class="mt-3 font-semibold">📍 Calle San Martin 565</p>
+                    <p class="font-medium">🕒 09:00 a 02:00</p>
+                    <a class="text-pink-500 underline"
+                        href="https://maps.app.goo.gl/K7ijsBE9UfVbfLz6A" target="_blank">
+                        Ver en Google Maps
+                    </a>
+
+                    <div class="flex justify-center mt-5">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3507.329722239701!2d-65.78132732488575!3d-28.469615260047156!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x942428c0b4fa20c1%3A0x4171d49ce1e5fd95!2sHeladeria%20Limar!5e0!3m2!1ses-419!2sar!4v1765068011374!5m2!1ses-419!2sar" width="500" height="150" style="border-radius:10px;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    </div>
+                </div>
+
+
+
+                
+
+        </div>
+
+
+
+
+
+
+
+    </main>
+
+    <!-- footer nada que descatar aca lo normal nose -->
+    <footer class=" border-t-2 border-pink-200 bg-linear-to-r from-pink-300 to-pink-300 p-10">
+        <div
+            class="flex flex-wrap justify-start md:justify-evenly items-center p-[0_40px] mb-7 font-[Lexend_Mega] text-[14px] text-white gap-5">
+
+            <div class="">
+                <h3 class="text-[15px]">Informacion</h3>
+                <ul class="pl-4">
+                    <li><a href="/html/todosSabores.html">Sabores</a></li>
+                    <li><a href="/html/sucursales.html">Sucursales</a></li>
+                    <li><a href="#">Promociones</a></li>
+                </ul>
+            </div>
+
+            <br>
+
+            <div>
+                <h3 class="text-[15px]">Helatto</h3>
+                <ul class="pl-4">
+                    <li><a href="#">Politica de privacidad</a></li>
+                    <li><a href="#">Defensa de las y los consumidores</a></li>
+                    <li><a href="#">TyC</a></li>
+                </ul>
+            </div>
+
+            <div>
+                <h3 class="text-[15px]">Redes Sociales</h3>
+                <ul class="flex gap-10 pl-4">
+                    <li><a href="https://www.facebook.com/"><img src="/static/img/redes/logoFacebook.png"
+                                alt="logoFacebook" width="15px"></a></li>
+                    <li><a href="https://www.instagram.com/"><img src="/static/img/redes/logoInsta.png" alt="logoInsta"
+                                width="23px"></a></li>
+                    <li><a href="https://x.com/?lang=es"><img src="/static/img/redes/logoX.png" alt="logoX"
+                                width="20px"></a></li>
+                    <li><a href="https://www.whatsapp.com/?lang=es"><img src="/static/img/redes/logoWhatsapp.png"
+                                alt="logoInsta" width="23px"></a></li>
+                </ul>
+            </div>
+
+
+        </div>
+
+        <hr class="my-4 border-1 border-pink-200">
+
+        <p class=" text-center text-white font-semibold">
+            &copy; 2025 Helatto. Todos los derechos reservados.
+        </p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+</body>
+
+</html>
