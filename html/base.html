@@ -13,6 +13,8 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Italianno&family=Lexend+Mega:wght@100..900&family=Lobster&family=Pacifico&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 
+
+
     <style>
         /* Se supone que oculta la barra de scroll no funciona en todos los navegadores(buscar solucion) */
         .no-scrollbar::-webkit-scrollbar {
@@ -51,11 +53,9 @@
             <a href="/index.html"><img src="/static/img/hellatoLogoRosa.png" alt="HelattoLogo" width="60px"></a>
 
 
-            <!-- boton hamburguesa podria haber usa un a y una imagen pero queria probar la etiqueta svg nunca le di un uso real en la ingenieria en programacion3 -->
+            <!-- boton hamburguesa podria haber usa un a y una imagen pero opte por los iconos de font awesone -->
             <label for="menuHamburguesa" class="cursor-pointer md:hidden block text-white">
-                <svg class="w-9 h-9" fill="none" stroke="currentColor" viewBox="0 0 20 27">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M4 6h16M4 12h16M4 18h16" />
-                </svg>
+                <i class="fa-solid fa-bars fa-2xl"></i>
             </label>
 
             <input type="checkbox" id="menuHamburguesa" class="hidden peer">
@@ -109,11 +109,11 @@
 
             <div>
                 <h3 class="text-[15px] boldMedium">Redes Sociales</h3>
-                <ul class="flex gap-10 pl-4">
-                    <li><a href="https://www.facebook.com/"><img src="/static/img/redes/logoFacebook.png" alt="logoFacebook" width="15px"></a></li>
-                    <li><a href="https://www.instagram.com/"><img src="/static/img/redes/logoInsta.png" alt="logoInsta" width="23px"></a></li>
-                    <li><a href="https://x.com/?lang=es"><img src="/static/img/redes/logoX.png" alt="logoX" width="20px"></a></li>
-                    <li><a href="https://www.whatsapp.com/?lang=es"><img src="/static/img/redes/logoWhatsapp.png" alt="logoInsta" width="23px"></a></li>
+                <ul class="flex gap-5 pl-4 pt-4">
+                    <li><a href="https://www.facebook.com/"><i class="fa-brands fa-facebook-f text-xl "></i></a></li>
+                    <li><a href="https://www.instagram.com/"><i class="fa-brands fa-instagram text-xl"></i></a></li>
+                    <li><a href="https://x.com/?lang=es"><i class="fa-brands fa-x-twitter text-xl"></i></a></li>
+                    <li><a href="https://www.whatsapp.com/?lang=es"><i class="fa-brands fa-whatsapp text-xl"></i></a></li>
                 </ul>
             </div>
 
@@ -127,7 +127,11 @@
         </p>
     </footer>
 
+    <!-- script de tailwind -->
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    
+    <!-- script de font awesome para los iconos -->
+    <script src="https://kit.fontawesome.com/e3817309d4.js" crossorigin="anonymous"></script>
 </body>
 
 </html>
