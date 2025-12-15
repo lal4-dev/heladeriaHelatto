@@ -4,13 +4,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <!-- metadatos adicionales -->
+
+    <!-- metadatos -->
     <meta name="description" content="Pagina de inicio de venta de helado hecho a mano para el gusto de todos">
     <meta name="keywords" content="helado, casero, catamarca, fresco, rico">
     <meta name="author" content="Maidana Alejo Leonel">
 
-    
     <title>Helatto</title>
 
     <link rel="icon" href="/static/img/hellatoIconRosa.png">
@@ -19,6 +18,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Italianno&family=Lexend+Mega:wght@100..900&family=Lobster&family=Pacifico&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+
 
     <style>
         /* Se supone que oculta la barra de scroll no funciona en todos los navegadores(buscar solucion) */
@@ -79,95 +80,28 @@
         </div>
     </header>
     
-    <main class="pb-16 ">
+    <main>
 
-        <h2 class="font-[Lexend_Mega] bold text-center md:text-left text-3xl text-pink-400 m-[5%_5%] drop-shadow-sm">CONTACTENOS</h2>
-
-        <section class="mx-auto px-6 mb-12 text-center">
-            <p class="mt-4 text-gray-700">
-                ¿Tenés alguna consulta, sugerencia o simplemente querés saludarnos?
-                Completá el formulario y nos pondremos en contacto a la brevedad.
-            </p>
-        </section>
-
-
-        <section class="flex justify-center mb-4 px-6">
-
-        
-            <form action="conctaco-exito.html"  class="w-150 bg-white border-2 border-pink-200 rounded-3xl p-8 shadow-lg flex flex-col gap-6">
-
-                <!-- Nombre -->
-                <div class="flex flex-col gap-1">
-                    <label for="nombre" class="font-medium text-gray-700">
-                        Nombre
-                    </label>
-                        <input type="text" id="nombre" name="nombre" placeholder="Nombre completo" required class="rounded-xl border border-pink-200 px-4 py-3 focus:outline-none focus:ring-2 focus:ring-pink-300">
-                </div>
-
-                <!-- Email -->
-                <div class="flex flex-col gap-1">
-                    <label for="email" class="font-medium text-gray-700">
-                        Email
-                    </label>
-                        <input type="email" id="email" name="email" placeholder="correoGenerico@mail.com" required class="rounded-xl border border-pink-200 px-4 py-3 focus:outline-none focus:ring-2 focus:ring-pink-300">
-                </div>
-
-                <!-- Teléfono -->
-                <div class="flex flex-col gap-1">
-                    <label for="telefono" class="font-medium text-gray-700">
-                        Teléfono
-                    </label>
-                        <input type="tel" id="telefono" name="Telefono" placeholder="Ej: 383 4000000" class="rounded-xl border border-pink-200 px-4 py-3 focus:outline-none focus:ring-2 focus:ring-pink-300">
-                </div>
-
-                <!-- Asunto -->
-                <div class="flex flex-col gap-1">
-                    <label for="asunto" class="font-medium text-gray-700">
-                        Asunto
-                    </label>
-                        <input type="text" id="asunto" name="asunto" placeholder="Motivo de tu consulta" class="rounded-xl border border-pink-200 px-4 py-3 focus:outline-none focus:ring-2 focus:ring-pink-300">
-                </div>
-
-                <!-- Mensaje -->
-                <div class="flex flex-col gap-1">
-                    <label for="mensaje" class="font-medium text-gray-700">
-                        Mensaje
-                    </label>
-                        <textarea id="mensaje" name="mensaje" rows="5" placeholder="Escribí tu mensaje acá..." required class="rounded-xl border border-pink-200 px-4 py-3 resize-none focus:outline-none focus:ring-2 focus:ring-pink-300"></textarea>
-                </div>
-
-                <!-- BOTÓN -->
-                <button type="submit" class="mt-4 bg-pink-400 hover:bg-pink-500 text-white font-semibold py-3 rounded-xl transition-colors duration-300 shadow-md">
-                    Enviar mensaje
-                </button>
-
-            </form>
-
-
-            
-        </section>
-
-        <!-- ÉXITO -->
-            <div id="exito" class="max-w-2xl mx-auto mt-10 hidden">
+        <!-- QR DEL HELADIÑO -->
+            <div id="exito" class="max-w-2xl mx-auto my-20 p-5">
                 <div class="bg-pink-100 border-2 border-pink-300 rounded-3xl p-8 text-center shadow-lg">
-                    <h3 class="text-2xl font-[Lexend_Mega] text-pink-400 mb-4">
-                        ¡Mensaje enviado!
+                    <h3 class="text-2xl font-[Lexend_Mega] text-pink-400 mb-4 bold">
+                        QR 1Kg Con Precio De 1/2Kg
                     </h3>
-                    <p class="text-gray-700 mb-6">
-                        Gracias por contactarte con Helatto 🍦  
-                        Te responderemos a la brevedad.
+                    <p class="text-gray-700 mb-6 font-[Roboto] bold ">
+                        Escaneá este QR para ver tu descuento.
                     </p>
-                    <a href="#" class="inline-block bg-pink-400 text-white px-6 py-3 rounded-xl">
+
+                    <div class="flex justify-center mb-4" >
+                        <img src="https://quickchart.io/qr?text=https://www.google.com&size=300" alt="QR de prueba" class="rounded-3xl shadow-lg">
+                    </div>
+
+
+                    <a href="/index.html" class="inline-block bg-pink-400 text-white px-6 py-3 rounded-xl font-[Roboto] bold">
                         Volver
                     </a>
                 </div>
             </div>
-
-            
-
-        
-
-        
 
 
     </main>
@@ -182,7 +116,7 @@
                 <ul class="pl-4">
                     <li><a href="/html/todosSabores.html">Sabores</a></li>
                     <li><a href="/html/sucursales.html">Sucursales</a></li>
-                    <li><a href="/html/promociones.html">Promociones</a></li>
+                    <li><a href="/html/sucursales.html">Promociones</a></li>
                 </ul>
             </div>
 
