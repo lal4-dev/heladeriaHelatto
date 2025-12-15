@@ -50,8 +50,8 @@
 
 
 </head>
-
-<body class="font-sans">
+ 
+<body class="font-sans min-h-screen flex flex-col"> <!--con estas clases junto al flex-grow en el main consigo que el foter este siempre abajo sin dejar espacio vacios incersarios -->
     <header
         class=" bg-center bg-no-repeat bg-cover flex flex-col justify-between">
         <div class="flex justify-between bg-linear-to-l from-pink-300 to-pink-200 items-center p-[0_30px] gap-10">
@@ -80,11 +80,11 @@
         </div>
     </header>
     
-    <main>
+    <main class="flex-grow">
 
         <h2 class="font-[Lexend_Mega] bold text-center md:text-left text-3xl text-pink-400 m-[5%_5%] drop-shadow-sm">PROMOCIONES</h2>
         
-        <div class="flex flex-col gap-8 max-w-md mx-auto mb-10">
+        <div class="flex flex-col gap-8 max-w-sm md:max-w-md mx-auto mb-10">
 
             <!-- PROMO 1 -->
             <div class="bg-white p-8 rounded-3xl shadow-lg text-center border-2 border-pink-200 ">
